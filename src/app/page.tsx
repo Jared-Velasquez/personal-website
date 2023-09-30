@@ -4,7 +4,7 @@ import Intro from "@/components/intro";
 export default function Home() {
   return (
     <main>
-      <div className="w-full bg-[#06141D]">
+      <div className="w-full bg-whip">
         <Intro />
         <div className="max-w-lg space-y-4 mx-auto py-24 text-neutral-300">
           <p>

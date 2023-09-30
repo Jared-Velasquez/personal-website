@@ -1,53 +1,45 @@
+"use client";
+
 import './style.css';
 import { Chivo } from 'next/font/google';
+import { motion, useScroll, useTransform, MotionValue, cubicBezier } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 const chivo = Chivo({
   subsets: ['latin'],
   variable: '--font-chivo',
-})
+});
 
-const index = () => {
+const easeFunction: (t: number) => number = cubicBezier(0.42, 0, 0.58, 1);
+
+const index = (): JSX.Element => {
+  const introRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: introRef,
+    offset: ['start start', 'end start'],
+  });
+
+  const nameTransform: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['0%', '300%'], { ease: easeFunction });
+  const studentTransform: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['0%', '200%'], { ease: easeFunction });
+  const universityTransform: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['0%', '100%'], { ease: easeFunction });
+
+  const nameOpacity: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['1', '0'], { ease: easeFunction });
+  const studentOpacity: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['1', '0'], { ease: easeFunction });
+  const universityOpacity: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['1', '0'], { ease: easeFunction });
+
+  useEffect(() => {
+    console.log(scrollYProgress);
+  }, [scrollYProgress])
+
   return (
-    <div className="w-full h-screen overflow-hidden relative grid place-items-center">
-      <div className={`introText ${chivo.variable} font-chivo space-y-1 text-white text-3xl`}>
-        <h1>I am Jared Velasquez.</h1>
-        <h2>Student of Computer Science at the</h2>
-        <h2>University of California, Los Angeles.</h2>
+    <div ref={introRef} className="flex flex-row p-[2rem] max-w-[1200px] mx-auto">
+      <img src="/images/intro_warm.jpg" className="w-full md:max-w-md aspect-auto shadow-2xl z-0 rounded-[5rem] select-none" />
+
+      <div className={`relative flex flex-col justify-center ${chivo.variable} font-chivo space-y-1 text-coffeeBlack text-3xl px-[2rem] select-none`}>
+        <motion.h1 style={{ x: nameTransform, opacity: nameOpacity }} className="ml-[1rem]">I am Jared Velasquez.</motion.h1>
+        <motion.h2 style={{ x: studentTransform, opacity: studentOpacity }} className="ml-[2.5rem]">Student of Computer Science at the</motion.h2>
+        <motion.h2 style={{ x: universityTransform, opacity: universityOpacity }} className="ml-[5rem]">University of California, Los Angeles.</motion.h2>
       </div>
-
-      {/* Full intro background image */}
-      <div
-        className="absolute inset-0 w-full max-w-5xl ml-auto mr-auto z-0"
-        style={{
-          backgroundImage: 'url(/images/intro_background.jpg)',
-          backgroundPosition: 'bottom',
-          backgroundSize: 'cover',
-          filter: 'brightness(80%)',
-        }} 
-      />
-
-      {/* Foreground image */}
-      <div
-        className="absolute inset-0 w-full max-w-5xl ml-auto mr-auto z-5"
-        style={{
-          backgroundImage: 'url(/images/intro_foreground_copy.png)',
-          backgroundPosition: 'bottom',
-          backgroundSize: 'cover',
-          filter: 'brightness(80%)',
-        }} 
-      />
-
-      {/* Subject image */}
-      <div
-        className="absolute inset-0 w-full max-w-5xl ml-auto mr-auto z-10"
-        style={{
-          backgroundImage: 'url(/images/intro_jared_copy_2.png)',
-          backgroundPosition: 'bottom',
-          backgroundSize: 'cover',
-          filter: 'brightness(80%)',
-        }} 
-      />
-
     </div>
   );
 }

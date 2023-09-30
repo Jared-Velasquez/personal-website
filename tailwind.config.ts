@@ -15,6 +15,13 @@ const config: Config = {
       },
       fontFamily: {
         chivo: ['var(--font-chivo)'],
+      },
+      colors: {
+        coffeeBlack: 'rgb(34, 15, 17)',
+        mocha: '#382a1d',
+        caramel: '#8f614b',
+        heavyCream: '#b697d',
+        whip: 'rgb(234, 224, 211)',
       }
     },
   },
