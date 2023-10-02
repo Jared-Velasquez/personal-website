@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  max-width: 1440px;
+  background-color: rgb(234, 224, 211);
+}
+
 /* Hide scrollbar for IE, Edge, and Firefox */
 body {
   margin: 0px;

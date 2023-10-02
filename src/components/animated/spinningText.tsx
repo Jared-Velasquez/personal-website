@@ -17,7 +17,6 @@ const spinAnimationVariants = {
 
 const SpinningText = ({ text }: { text: string }) => {
   const [isTextHovered, setIsTextHovered] = useState<boolean>(false);
-  const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const controls = useAnimationControls();
 
   useEffect(() => {
@@ -27,7 +26,6 @@ const SpinningText = ({ text }: { text: string }) => {
 
   const handleMouseEnter = () => {
     setIsTextHovered(true);
-    setIsAnimating(true);
   }
 
   return (
