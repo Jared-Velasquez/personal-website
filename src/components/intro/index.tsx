@@ -45,9 +45,9 @@ const index = (): JSX.Element => {
     offset: ['start start', 'end start'],
   });
 
-  const nameTransform: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['0%', '300%'], { ease: easeFunction });
-  const studentTransform: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['0%', '200%'], { ease: easeFunction });
-  const universityTransform: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['0%', '100%'], { ease: easeFunction });
+  const nameTransform: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['0%', '50%'], { ease: easeFunction });
+  const studentTransform: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['0%', '35%'], { ease: easeFunction });
+  const universityTransform: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['0%', '15%'], { ease: easeFunction });
 
   const nameOpacity: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['1', '0'], { ease: easeFunction });
   const studentOpacity: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['1', '0'], { ease: easeFunction });
