@@ -22,6 +22,9 @@ const config: Config = {
         caramel: '#8f614b',
         heavyCream: '#b697d',
         whip: 'rgb(234, 224, 211)',
+      },
+      aspectRatio: {
+        intro: '0.74993'
       }
     },
   },

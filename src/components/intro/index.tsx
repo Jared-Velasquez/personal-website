@@ -54,18 +54,18 @@ const index = (): JSX.Element => {
   const universityOpacity: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['1', '0'], { ease: easeFunction });
 
   return (
-    <div ref={introRef} className="flex flex-col md:flex-row p-[2rem] max-w-[1200px] mx-auto">
+    <div ref={introRef} className="flex flex-col md:flex-row h-[100vh] items-center mb-[3rem]">
       {/* TODO: FADE IN IMAGE, STYLIZE UCLA, RESPONSIVE DESIGN */}
       <motion.img 
         src="/images/intro_warm.jpg" 
-        className="w-full md:max-w-md aspect-auto shadow-2xl z-0 rounded-[5rem] select-none" 
+        className="shadow-2xl z-0 rounded-[5rem] select-none profile-image" 
         variants={imageVariants}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
       />
 
-      <div className={`relative flex flex-col justify-center ${chivo.variable} font-chivo space-y-1 text-coffeeBlack text-3xl px-[2rem] select-none`}>
+      <div className={`relative flex flex-col justify-center ${chivo.variable} font-chivo space-y-1 text-coffeeBlack text-3xl pl-[2rem] pr-[1rem] select-none`}>
         <motion.h2
           variants={introTextVariants}
           custom={0}
@@ -75,7 +75,7 @@ const index = (): JSX.Element => {
           style={{ x: nameTransform, opacity: nameOpacity }}
           className="ml-[1rem]"
         >
-          I'm Jared Velasquez, a
+          I'm Jared Velasquez, a student of
         </motion.h2>
         <motion.h2 
           variants={introTextVariants}
@@ -85,7 +85,7 @@ const index = (): JSX.Element => {
           style={{ x: studentTransform, opacity: studentOpacity }} 
           className="ml-[2.5rem]"
         >
-          student of Computer Science at the
+          Computer Science and Engineering at
         </motion.h2>
         <motion.h2 
           variants={introTextVariants}

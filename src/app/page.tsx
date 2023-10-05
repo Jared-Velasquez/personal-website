@@ -1,8 +1,11 @@
 "use client";
 
 import Intro from "@/components/intro";
+import Projects from '@/components/projects';
 import Lenis from "@studio-freight/lenis";
 import { useEffect } from "react";
+
+import styles from './styles.module.css';
 
 
 export default function Home() {
@@ -28,8 +31,9 @@ export default function Home() {
 
   return (
     <main>
-      <div>
+      <div className="max-w-[1200px] mx-auto">
         <Intro />
+        <Projects />
         <div className="max-w-lg space-y-4 mx-auto py-24 text-neutral-300">
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam quae
