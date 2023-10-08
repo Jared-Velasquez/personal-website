@@ -3,9 +3,12 @@
 import './style.css';
 import { Chivo } from 'next/font/google';
 import { motion, useScroll, useTransform, MotionValue, cubicBezier, useSpring, useAnimate, useInView, Variants, useAnimationControls } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope  } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import { SpinningText } from '../animated';
+import useMediaQuery from '@/app/hooks/useMediaQuery';
 
 const chivo = Chivo({
   subsets: ['latin'],
@@ -38,65 +41,69 @@ const imageVariants: Variants = {
 const easeFunction: (t: number) => number = cubicBezier(0.42, 0, 0.58, 1);
 
 const index = (): JSX.Element => {
-  const introRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: introRef,
-    offset: ['start start', 'end start'],
-  });
-
-  const nameTransform: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['0%', '50%'], { ease: easeFunction });
-  const studentTransform: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['0%', '35%'], { ease: easeFunction });
-  const universityTransform: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['0%', '15%'], { ease: easeFunction });
-
-  const nameOpacity: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['1', '0'], { ease: easeFunction });
-  const studentOpacity: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['1', '0'], { ease: easeFunction });
-  const universityOpacity: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['1', '0'], { ease: easeFunction });
-
   return (
-    <section id="home" ref={introRef} className="flex flex-col md:flex-row h-[100vh] items-center my-[3rem]">
-      {/* TODO: FADE IN IMAGE, STYLIZE UCLA, RESPONSIVE DESIGN */}
-      <motion.img 
-        src="/images/intro_warm.jpg" 
-        className="shadow-2xl z-0 rounded-[5rem] select-none profile-image" 
-        variants={imageVariants}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-      />
+    <section
+      id="home"
+      className="md:flex md:justify-between md:items-center md:h-full py-10"
+    >
+      {/* IMAGE SECTION */}
+      <div className="basis-3/5 z-10 mt-16 md:mt-32 flex justify-center">
+        <img
+          alt="profile"
+          className="rounded-[5rem] saturate-150 hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]"
+          src="images/intro_warm.jpg"
+        />
+      </div>
+      
+      {/* MAIN TEXT */}
+      <div className="z-30 basis-2/5 mt-12 md:mt-32">
+        {/* HEADINGS */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
+          }}
+        >
+          <p className="text-5xl font-playfair z-10 text-center md:text-start">
+            Hi, I'm Jared Velasquez.
+          </p>
 
-      <div className={`relative flex flex-col justify-center ${chivo.variable} font-chivo space-y-1 text-coffeeBlack text-3xl pl-[2rem] pr-[1rem] select-none`}>
-        <motion.h2
-          variants={introTextVariants}
-          custom={0}
-          initial="textInitial"
-          animate="textAnimate"
-          viewport={{ once: true }}
-          style={{ x: nameTransform, opacity: nameOpacity }}
-          className="ml-[1rem]"
-        >
-          I'm Jared Velasquez, a student of
-        </motion.h2>
-        <motion.h2 
-          variants={introTextVariants}
-          custom={1}
-          initial="textInitial"
-          animate="textAnimate"
-          style={{ x: studentTransform, opacity: studentOpacity }} 
-          className="ml-[2.5rem]"
-        >
-          Computer Science and Engineering at
-        </motion.h2>
-        <motion.h2 
-          variants={introTextVariants}
-          custom={2}
-          initial="textInitial"
-          animate="textAnimate"
-          style={{ x: universityTransform, opacity: universityOpacity }} 
-          className="ml-[5rem]"
-        >
-          <SpinningText text={'University of California, Los Angeles.'} />
-        </motion.h2>
+          <p className="mt-5 mb-7 text-md text-center md:text-start">
+            I'm an aspiring full-stack developer and a student of Computer Science and Engineering at the University of California, Los Angeles.
+          </p>
+        </motion.div>
+
+        {/* SOCIALS */}
+        <div className="flex mt-5 justify-center md:justify-start gap-7">
+          <a
+            className="hover:opacity-50 transition duration-250"
+            href="https://github.com/Jared-Velasquez"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} size="2xl" />
+          </a>
+          <a
+            className="hover:opacity-50 transition duration-250"
+            href="https://www.linkedin.com/in/jaredvel25/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faLinkedin} size="2xl" />
+          </a>
+          <a
+            className="hover:opacity-50 transition duration-250"
+            href="mailto:jaredvel25@ucla.edu"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faEnvelope} size="2xl" />
+          </a>
+        </div>
       </div>
     </section>
   );
