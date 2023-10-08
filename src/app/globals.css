@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 html {
-  max-width: 1440px;
-  overflow-x: hidden;
+  /*max-width: 1440px;
+  overflow-x: hidden;*/
   background-color: rgb(234, 224, 211);
 }
 

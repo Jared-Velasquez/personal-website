@@ -54,7 +54,7 @@ const index = (): JSX.Element => {
   const universityOpacity: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ['1', '0'], { ease: easeFunction });
 
   return (
-    <div ref={introRef} className="flex flex-col md:flex-row h-[100vh] items-center mb-[3rem]">
+    <section id="home" ref={introRef} className="flex flex-col md:flex-row h-[100vh] items-center my-[3rem]">
       {/* TODO: FADE IN IMAGE, STYLIZE UCLA, RESPONSIVE DESIGN */}
       <motion.img 
         src="/images/intro_warm.jpg" 
@@ -98,7 +98,7 @@ const index = (): JSX.Element => {
           <SpinningText text={'University of California, Los Angeles.'} />
         </motion.h2>
       </div>
-    </div>
+    </section>
   );
 }
 
