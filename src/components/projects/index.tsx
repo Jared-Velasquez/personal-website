@@ -1,62 +1,27 @@
 import { cubicBezier, motion, MotionValue, useScroll, useTransform, Variants } from "framer-motion";
 import { useRef } from "react";
 
-const barVariants: Variants = {
-  initial: {
-    width: '0%',
+const projectContainerVariant = {
+  hidden: {},
+  visible: {
     transition: {
-      duration: '1s',
+      staggerChildren: 0.2
     }
-  },
-  animate: {
-    width: '30%',
   }
 }
 
-const index = (): JSX.Element => {
+const projectVariant = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1 },
+}
 
+const index = (): JSX.Element => {
   return (
-    <div>
-      {/* Projects header */}
-      <div className="flex flex-row justify-center items-center">
-        <motion.div
-          style={{
-            float: 'right',
-            height: '1px',
-            backgroundColor: '#382a1d'
-          }}
-          variants={barVariants}
-          initial="initial"
-          whileInView="animate"
-          transition={{
-            delay: 0.3
-          }}
-          viewport={{
-            once: true
-          }}
-        />
-        <span className="font-chivo text-coffeeBlack text-2xl px-[1rem]">My Projects</span>
-        <motion.div
-          style={{
-            height: '1px',
-            backgroundColor: '#382a1d'
-          }}
-          variants={barVariants}
-          initial="initial"
-          whileInView="animate"
-          transition={{
-            delay: 0.3
-          }}
-          viewport={{
-            once: true
-          }}
-        />
+    <div className="flex justify-center">
+      {/* PROJECTS GRID*/}
+      <div className="sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        
       </div>
-      <div>asdfasdfasdfaadsfsddf <br/>asfsadfsadfsafasf <br/> adfasdfa</div>
-      <div>asdfasdfasdfaadsfsddf <br/>asfsadfsadfsafasf <br/> adfasdfa</div>
-      <div>asdfasdfasdfaadsfsddf <br/>asfsadfsadfsafasf <br/> adfasdfa</div>
-      <div>asdfasdfasdfaadsfsddf <br/>asfsadfsadfsafasf <br/> adfasdfa</div>
-      <div>asdfasdfasdfaadsfsddf <br/>asfsadfsadfsafasf <br/> adfasdfa</div>
     </div>
   );
 }

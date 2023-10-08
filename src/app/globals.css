@@ -5,6 +5,7 @@
 html,
 body,
 .app {
+  margin: 0;
   height: 100%;
   background-color: rgb(234, 224, 211);
   @apply text-coffeeBlack

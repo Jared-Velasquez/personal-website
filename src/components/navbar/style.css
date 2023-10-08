@@ -1,0 +1,11 @@
+.navbarTop {
+  margin: 0;
+  background-color: transparent;
+  transition: background-color 250ms ease-in-out;
+}
+
+.navbar {
+  margin: 0;
+  background-color: rgb(34, 15, 17);
+  transition: background-color 250ms ease-in-out;
+}
