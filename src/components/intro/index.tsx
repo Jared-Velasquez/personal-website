@@ -9,6 +9,7 @@ import { faGithub, faLinkedin, faDev } from '@fortawesome/free-brands-svg-icons'
 
 import { SpinningText } from '../animated';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
+import Image from 'next/image';
 
 const chivo = Chivo({
   subsets: ['latin'],
@@ -48,7 +49,7 @@ const index = (): JSX.Element => {
     >
       {/* IMAGE SECTION */}
       <motion.div 
-        className="basis-3/5 z-10 mt-16 md:mt-16 flex justify-center"
+        className="basis-2/5 z-10 mt-16 md:mt-16 flex justify-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -66,7 +67,7 @@ const index = (): JSX.Element => {
       </motion.div>
       
       {/* MAIN TEXT */}
-      <div className="z-30 basis-2/5 mt-12 md:mt-32">
+      <div className="z-30 basis-1/2 mt-12 md:mt-32">
         {/* HEADINGS */}
         <motion.div
           initial="hidden"

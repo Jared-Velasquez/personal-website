@@ -2,7 +2,7 @@
 
 import useMediaQuery from '@/app/hooks/useMediaQuery';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
@@ -25,8 +25,27 @@ const NavbarLink = ({ page, selectedPage, setSelectedPage }: { page: string, sel
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: { isTopOfPage: boolean, selectedPage: string, setSelectedPage: React.Dispatch<React.SetStateAction<string>>}) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
-  const navbarBackground = isTopOfPage ? "navbarTop" : "navbar"
-  const textColor = isTopOfPage ? "text-coffeeBlack" : "text-whip"
+  const [navbarBackground, setNavbarBackground] = useState<string>("navbarTop");
+  const [textColor, setTextColor] = useState<string>("text-coffeeBlack");
+  //let navbarBackground = (isTopOfPage && !isAboveSmallScreens) ? "navbarTop" : "navbar"
+  //let textColor = (isTopOfPage && !isAboveSmallScreens) ? "text-coffeeBlack" : "text-whip"
+
+  useEffect(() => {
+    if (!isAboveSmallScreens) {
+      setNavbarBackground("navbarTop");
+      setTextColor("text-coffeeBlack");
+      return;
+    }
+
+    if (isTopOfPage) {
+      setNavbarBackground("navbarTop");
+      setTextColor("text-coffeeBlack");
+      return;
+    }
+
+    setNavbarBackground("navbar");
+    setTextColor("text-whip");
+  }, [isTopOfPage, isAboveSmallScreens]);
 
   return (
     <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-6`}>

@@ -1,6 +1,7 @@
 "use client";
 
 import Intro from "@/components/intro";
+import Skills from '@/components/skills';
 import Projects from '@/components/projects';
 //import Lenis from "@studio-freight/lenis";
 import { useEffect, useState } from "react";
@@ -32,6 +33,9 @@ export default function Home() {
       <div className="w-5/6 mx-auto md:h-full">
         <Intro />
       </div>
+      {/*<div className="w-5/6 mx-auto">
+        <Skills />
+  </div>*/}
       <div className="w-5/6 mx-auto md:h-full">
         <Projects />
       </div>
