@@ -62,7 +62,7 @@ const index = (): JSX.Element => {
         <img
           alt="profile"
           className="rounded-[5rem] saturate-150 hover:filter hover:saturate-200 transition duration-500 hover:scale-105 transition duration-300 z-10 w-full max-w-[400px] md:max-w-[600px]"
-          src="images/intro_warm.jpg"
+          src="images/intro.jpg"
         />
       </motion.div>
       
@@ -70,6 +70,7 @@ const index = (): JSX.Element => {
       <div className="z-30 basis-1/2 mt-12 md:mt-32">
         {/* HEADINGS */}
         <motion.div
+          className="mt-[5rem] sm:mt-[5rem] md:mt-[0rem]"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
