@@ -1,45 +1,10 @@
 "use client";
 
 import './style.css';
-import { Chivo } from 'next/font/google';
-import { motion, useScroll, useTransform, MotionValue, cubicBezier, useSpring, useAnimate, useInView, Variants, useAnimationControls } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope  } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faDev } from '@fortawesome/free-brands-svg-icons';
-
-import { SpinningText } from '../animated';
-import useMediaQuery from '@/app/hooks/useMediaQuery';
-import Image from 'next/image';
-
-const chivo = Chivo({
-  subsets: ['latin'],
-  variable: '--font-chivo',
-});
-
-const introTextVariants: Variants = {
-  textInitial: {
-    x: '100px',
-    opacity: 0
-  },
-  textAnimate: (index: number) => ({
-    x: 0,
-    opacity: 1,
-    transition: {
-      delay: (0.5 * index) + 0.5,
-    }
-  })
-}
-
-const imageVariants: Variants = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-  }
-}
-
-const easeFunction: (t: number) => number = cubicBezier(0.42, 0, 0.58, 1);
 
 const index = (): JSX.Element => {
   return (
@@ -52,7 +17,7 @@ const index = (): JSX.Element => {
         className="basis-2/5 z-10 mt-16 md:mt-16 flex justify-center"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.5 }}
         variants={{
           hidden: { opacity: 0, x: 50 },
@@ -81,7 +46,7 @@ const index = (): JSX.Element => {
           }}
         >
           <p className="text-5xl font-playfair z-10 text-center md:text-start">
-            Hi, I'm Jared Velasquez.
+            Hi, I'm <span className="font-semibold">Jared Velasquez.</span>
           </p>
         </motion.div>
 

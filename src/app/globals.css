@@ -11,6 +11,10 @@ body,
   @apply text-coffeeBlack
 }
 
+html {
+  max-width: 1920px;
+}
+
 /* Hide scrollbar for IE, Edge, and Firefox */
 body {
   margin: 0px;
