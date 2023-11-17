@@ -16,6 +16,7 @@ const config: Config = {
       fontFamily: {
         chivo: ['var(--font-chivo)'],
         oswald: ['var(--font-oswald)'],
+        playfair: ['var(--font-playfair)'],
       },
       colors: {
         coffeeBlack: 'rgb(34, 15, 17)',
@@ -23,6 +24,7 @@ const config: Config = {
         caramel: '#8f614b',
         heavyCream: '#b697d',
         whip: 'rgb(234, 224, 211)',
+        whipDark: '#DAC8B0',
         sage: '#9eab9a',
       },
       aspectRatio: {

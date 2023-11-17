@@ -16,6 +16,7 @@ const NavbarLink = ({ page, selectedPage, setSelectedPage }: { page: string, sel
       className={`${selectedPage === lowerCasePage ? 'text-yellow-500' : ''} hover:text-yellow-500 transition duration-500`}
       href={`$${lowerCasePage}`}
       onClick={() => setSelectedPage(lowerCasePage)}
+      offset='65'
     >
       {page}
     </AnchorLink>

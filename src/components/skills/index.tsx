@@ -24,7 +24,7 @@ const skillVariants: Variants = {
       else if (index > Math.floor(length / 2))
         xOffset = '50px';
       else
-        yOffset = '50px';
+        yOffset = '25px';
     } else {
       if (index < Math.floor(length / 2))
         xOffset = '-50px';
@@ -55,7 +55,7 @@ const skillVariants: Variants = {
       opacity: 1,
       transition: {
         ease: "linear",
-        delay: delay * 0.25,
+        delay: delay * 0.10,
       }
     }
   }
@@ -84,103 +84,6 @@ const oswald = Oswald({
   subsets: ['latin'],
   variable: '--font-oswald',
 });
-
-const SkillsIcon = ({src, title, index, length, isAboveSmallScreens}: {src: string, title: string, index: number, length: number, isAboveSmallScreens: boolean}): JSX.Element => {
-  if (!isAboveSmallScreens) {
-    return (
-      <motion.div 
-        className="flex flex-col items-center transition duration-300 hover:scale-110 select-none"
-        whileHover={{
-          scale: 1.15,
-        }}
-        custom={index}
-        initial="initialSmall"
-        whileInView="animateSmall"
-        viewport={{ once: true, amount: 0.25 }}
-        variants={skillVariantsSmall}
-      >
-        <img src={src} className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
-        <p className={`${oswald.variable} font-oswald text-xl font-light select-none`}>{title}</p>
-      </motion.div>
-    );
-  } else {
-    return (
-      <motion.div 
-        className="flex flex-col items-center transition duration-300 hover:scale-110 select-none"
-        whileHover={{
-          scale: 1.15,
-        }}
-        custom={{index, length}}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, amount: 0.25 }}
-        variants={skillVariants}
-      >
-        <img src={src} className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
-        <p className={`${oswald.variable} font-oswald text-xl font-light select-none`}>{title}</p>
-      </motion.div>
-    );
-  }
-}
-
-const index = (): JSX.Element => {
-  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
-  
-  return (
-    <section id="skills" className="flex flex-col flex-wrap sm:gap-y-5 md:gap-y-5 items-center">
-      <motion.div
-        className={`${chivo.variable} text-3xl font-bold py-[2rem] select-none`}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, amount: 0.25 }}
-        transition={{ duration: 1 }}
-        variants={{
-          initial: {
-            opacity: 0
-          },
-          animate: {
-            opacity: 1
-          }
-        }}
-      >
-        <SpinningText text={"My Skills"} />
-      </motion.div>
-      {isAboveSmallScreens ? 
-        <>
-          <div className="flex flex-col md:gap-y-2 items-center justify-center">
-            <div className="flex flex-row flex-wrap gap-7 sm:gap-12 md:gap-14 items-center justify-center">
-              {SKILLS.map((skill, index) => {
-                return <SkillsIcon key={index} src={skill.src} title={skill.title} index={index} length={SKILLS.length} isAboveSmallScreens={isAboveSmallScreens}/>
-              })}
-            </div>
-          </div>
-          <div className="flex flex-col md:gap-y-2 items-center justify-center">
-            <div className="flex flex-row flex-wrap gap-7 sm:gap-12 md:gap-14 items-center justify-center">
-              {FRAMEWORKS.map((skill, index) => {
-                return <SkillsIcon key={index} src={skill.src} title={skill.title} index={index} length={FRAMEWORKS.length} isAboveSmallScreens={isAboveSmallScreens}/>
-              })}
-            </div>
-          </div>
-          <div className="flex flex-col md:gap-y-2 items-center justify-center">
-            <div className="flex flex-row flex-wrap gap-7 sm:gap-12 md:gap-14 items-center justify-center">
-              {TECHNOLOGIES.map((skill, index) => {
-                return <SkillsIcon key={index} src={skill.src} title={skill.title} index={index} length={TECHNOLOGIES.length} isAboveSmallScreens={isAboveSmallScreens}/>
-              })}
-            </div>
-          </div>
-        </>
-        :
-        <div className="flex flex-col md:gap-y-2 items-center justify-center">
-          <div className="flex flex-row flex-wrap gap-7 sm:gap-12 md:gap-14 items-center justify-center">
-            {ALL_SKILLS_LIST.map((skill, index) => {
-              return <SkillsIcon key={index} src={skill.src} title={skill.title} index={index} length={TECHNOLOGIES.length} isAboveSmallScreens={isAboveSmallScreens}/>
-            })}
-          </div>
-        </div>
-      }
-    </section>
-  );
-}
 
 const SKILLS: ICON_INTERFACE[] = [
   {
@@ -242,6 +145,10 @@ const FRAMEWORKS: ICON_INTERFACE[] = [
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
     title: "Angular",
   },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    title: "Next.js"
+  }
 ];
 
 const TECHNOLOGIES: ICON_INTERFACE[] = [
@@ -268,5 +175,103 @@ const TECHNOLOGIES: ICON_INTERFACE[] = [
 ];
 
 const ALL_SKILLS_LIST: ICON_INTERFACE[] = SKILLS.concat(FRAMEWORKS, TECHNOLOGIES);
+
+const SkillsIcon = ({src, title, index, length, isAboveSmallScreens}: {src: string, title: string, index: number, length: number, isAboveSmallScreens: boolean}): JSX.Element => {
+  if (!isAboveSmallScreens) {
+    return (
+      <motion.div 
+        className="flex flex-col items-center transition duration-300 hover:scale-110 select-none cursor-pointer"
+        onClick={() => console.log(title)}
+        whileHover={{
+          scale: 1.15,
+        }}
+        custom={index}
+        initial="initialSmall"
+        whileInView="animateSmall"
+        viewport={{ once: true, amount: 0.25 }}
+        variants={skillVariantsSmall}
+      >
+        <img src={src} className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
+        <p className={`${oswald.variable} font-oswald text-xl font-light select-none`}>{title}</p>
+      </motion.div>
+    );
+  } else {
+    return (
+      <motion.div 
+        className="flex flex-col items-center transition duration-300 hover:scale-110 select-none"
+        whileHover={{
+          scale: 1.15,
+        }}
+        custom={{index, length}}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.25 }}
+        variants={skillVariants}
+      >
+        <img src={src} className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
+        <p className={`${oswald.variable} font-oswald text-xl font-light select-none`}>{title}</p>
+      </motion.div>
+    );
+  }
+}
+
+const index = (): JSX.Element => {
+  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
+  
+  return (
+    <section id="skills" className="flex flex-col flex-wrap sm:gap-y-5 md:gap-y-5 items-center mt-[2.5rem] bg-whipDark p-[2rem] pt-[1rem] rounded-3xl h-fit">
+      <motion.div
+        className={`${chivo.variable} text-3xl font-bold py-[2rem] select-none`}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 1 }}
+        variants={{
+          initial: {
+            opacity: 0
+          },
+          animate: {
+            opacity: 1
+          }
+        }}
+      >
+        <SpinningText text={"My Skills"} />
+      </motion.div>
+      {isAboveSmallScreens ? 
+        <>
+          <div className="flex flex-col md:gap-y-2 items-center justify-center">
+            <div className="flex flex-row flex-wrap gap-7 sm:gap-12 md:gap-14 items-center justify-center">
+              {SKILLS.map((skill, index) => {
+                return <SkillsIcon key={index} src={skill.src} title={skill.title} index={index} length={SKILLS.length} isAboveSmallScreens={isAboveSmallScreens}/>
+              })}
+            </div>
+          </div>
+          <div className="flex flex-col md:gap-y-2 items-center justify-center">
+            <div className="flex flex-row flex-wrap gap-7 sm:gap-12 md:gap-14 items-center justify-center">
+              {FRAMEWORKS.map((skill, index) => {
+                return <SkillsIcon key={index} src={skill.src} title={skill.title} index={index} length={FRAMEWORKS.length} isAboveSmallScreens={isAboveSmallScreens}/>
+              })}
+            </div>
+          </div>
+          <div className="flex flex-col md:gap-y-2 items-center justify-center">
+            <div className="flex flex-row flex-wrap gap-7 sm:gap-12 md:gap-14 items-center justify-center">
+              {TECHNOLOGIES.map((skill, index) => {
+                return <SkillsIcon key={index} src={skill.src} title={skill.title} index={index} length={TECHNOLOGIES.length} isAboveSmallScreens={isAboveSmallScreens}/>
+              })}
+            </div>
+          </div>
+        </>
+        :
+        <div className="flex flex-col md:gap-y-2 items-center justify-center">
+          <div className="flex flex-row flex-wrap gap-7 sm:gap-12 md:gap-14 items-center justify-center">
+            {ALL_SKILLS_LIST.map((skill, index) => {
+              return <SkillsIcon key={index} src={skill.src} title={skill.title} index={index} length={TECHNOLOGIES.length} isAboveSmallScreens={isAboveSmallScreens}/>
+            })}
+          </div>
+        </div>
+      }
+    </section>
+  );
+}
 
 export default index;

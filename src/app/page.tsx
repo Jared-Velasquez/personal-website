@@ -33,7 +33,7 @@ export default function Home() {
       <div className="w-5/6 mx-auto md:h-full">
         <Intro />
       </div>
-      <div className="w-5/6 mx-auto">
+      <div className="w-5/6 mx-auto md:h-fit">
         <Skills />
       </div>
       <div className="w-5/6 mx-auto md:h-full">
