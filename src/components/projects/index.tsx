@@ -3,6 +3,7 @@ import { Chivo, Playfair, Oswald } from "next/font/google";
 import { useRef } from "react";
 import { SpinningText } from "../animated";
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const projectContainerVariant = {
@@ -39,6 +40,7 @@ interface PROJECT_INTERFACE {
   title: string,
   description: string,
   githubLink?: string,
+  websiteLink?: string,
   icons?: string[],
 }
 
@@ -79,14 +81,16 @@ const PROJECTS: PROJECT_INTERFACE[] = [
     title: "DoctorAMA",
     description: "DoctorAMA is a web-based medical chat app designed to fight discrimination against the LGBTQ+ community. Second-place winner in 2023 UCLA QWER Hacks: Health Category.",
     githubLink: "https://github.com/Jared-Velasquez/doctor-ama",
+    websiteLink: "https://hellodoctorama.tech",
     icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg", 
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"]
   },
   {
     header: "Hackathon Project",
     title: "MoonStruck",
-    description: "",
+    description: "MoonStruck is a web application that enables couples who are in a long-distance relationship to stay in touch with each other and allows them to keep an active role in each others’ everyday lives. Participant in 2023 LA Hacks.",
     githubLink: "https://github.com/ayangelah/moonstruck",
+    websiteLink: "https://moon-struck.tech/",
     icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg", 
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg",
@@ -95,30 +99,41 @@ const PROJECTS: PROJECT_INTERFACE[] = [
   {
     header: "Personal Project",
     title: "InstaClone",
-    description: "",
+    description: "InstaClone is a social media app where users can upload photos and post comments for followers to view. Designed to replicate the UI and functionality of Instagram. My first major project.",
     githubLink: "https://github.com/Jared-Velasquez/InstaClone",
     icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", 
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"]
   }
 ]
 
-const Project = ({title, header, description, githubLink, icons}: PROJECT_INTERFACE): JSX.Element => {
+const Project = ({title, header, description, githubLink, websiteLink, icons}: PROJECT_INTERFACE): JSX.Element => {
   return (
-    <div className="bg-coffeeBlack p-[2rem] rounded-xl text-whip">
+    <div className="flex flex-col justify-evenly bg-coffeeBlack p-[2rem] rounded-xl text-whip">
       <h1 className={`${oswald.variable} font-oswald`}>{header}</h1>
       <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>{title}</h1>
       <p className="mt-[1rem] mb-[1rem]">{description}</p>
       
       {/* Icons */}
-      <div className="flex flex-row">
-        {githubLink && <a
-          className="hover:opacity-50 transition duration-250 mr-[2.5rem]"
-          href={githubLink}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon icon={faGithub} size="2xl" />
-        </a>}
+      <div className="flex flex-row bottom-0">
+        {(githubLink || websiteLink) && <div className="pr-[1rem] border-r-2 rounded-sm mr-[1.5rem]">
+          {githubLink && <a
+            className="hover:opacity-50 transition duration-250 mr-[1rem]"
+            href={githubLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} size="2xl" />
+          </a>}
+
+          {websiteLink && <a
+            className="hover:opacity-50 transition duration-250"
+            href={websiteLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faLink} size="2xl" />
+          </a>}
+        </div>}
 
         <div className="flex flex-row">
           {icons?.map((icon, index) => (
@@ -151,7 +166,7 @@ const index = (): JSX.Element => {
       >
         <SpinningText text={"My Projects"} />
       </motion.div>
-      
+
       {/* PROJECTS GRID*/}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 auto-cols-max">
         {PROJECTS.map((project, index) => {

@@ -109,6 +109,15 @@ const index = (): JSX.Element => {
           >
             <FontAwesomeIcon icon={faEnvelope} size="2xl" />
           </a>
+          <a
+            className="hover:opacity-50 transition duration-250 -ml-[0.15rem]"
+            href="Resume121823.pdf"
+            download="JaredVelasquezResume121823"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img width="35" height="35" src="https://img.icons8.com/ios/100/resume.png" alt="resume"/>
+          </a>
         </motion.div>
       </div>
     </section>
