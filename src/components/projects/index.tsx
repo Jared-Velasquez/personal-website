@@ -46,7 +46,11 @@ const PROJECTS: PROJECT_INTERFACE[] = [
   {
     header: "UCLA eHealth Research Lab",
     title: "Camradia",
-    description: ""
+    description: "Camradia is an ongoing mental health research project and social media app designed to promote physical fitness, mental wellbeing, and group activity.",
+    icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", 
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"]
   },
   {
     header: "Personal Project",
@@ -55,28 +59,46 @@ const PROJECTS: PROJECT_INTERFACE[] = [
     githubLink: "https://github.com/Jared-Velasquez/Edify",
     icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg", 
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg", 
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg", 
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+    "https://www.vectorlogo.zone/logos/hibernate/hibernate-icon.svg", 
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"]
   },
   {
     header: "Class Project",
     title: "Buzz",
-    description: ""
+    description: "Buzz is a web application that centralizes information about student organizations at UCLA and enables users to host and join events on the campus.",
+    githubLink: "https://github.com/benweschler/buzz",
+    icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg", 
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"],
   },
   {
     header: "Hackathon Project",
     title: "DoctorAMA",
-    description: "DoctorAMA is a web-based medical chat app designed to fight discrimination against the LGBTQ+ community"
+    description: "DoctorAMA is a web-based medical chat app designed to fight discrimination against the LGBTQ+ community. Second-place winner in 2023 UCLA QWER Hacks: Health Category.",
+    githubLink: "https://github.com/Jared-Velasquez/doctor-ama",
+    icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg", 
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"]
   },
   {
     header: "Hackathon Project",
     title: "MoonStruck",
-    description: ""
+    description: "",
+    githubLink: "https://github.com/ayangelah/moonstruck",
+    icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg", 
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"]
   },
   {
     header: "Personal Project",
     title: "InstaClone",
-    description: ""
+    description: "",
+    githubLink: "https://github.com/Jared-Velasquez/InstaClone",
+    icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", 
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"]
   }
 ]
 
@@ -129,77 +151,12 @@ const index = (): JSX.Element => {
       >
         <SpinningText text={"My Projects"} />
       </motion.div>
+      
       {/* PROJECTS GRID*/}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 auto-cols-max">
-        {/*PROJECTS.map((project, index) => {
-          return <Project key={index} header={project.header} title={project.title}/>
-        })*/}
-        <div className="bg-coffeeBlack p-[2rem] rounded-xl text-whip">
-          <h1 className={`${oswald.variable} font-oswald`}>UCLA eHealth Research Lab</h1>
-          <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>Camradia</h1>
-          <p>Camradia is an ongoing mental health research project and social media app designed to promote 
-            physical fitness, mental wellbeing, and group activity.</p>
-        </div>
-
-        <Project {...PROJECTS[1]}/>
-
-        <div className="bg-coffeeBlack p-[2rem] rounded-xl text-whip">
-          <h1 className={`${oswald.variable} font-oswald`}>Class Project</h1>
-          <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>Buzz</h1>
-          <p>Buzz is a web application that centralizes information about student organizations at UCLA and enables 
-            users to host and join events on the campus.</p>
-          <a
-            className="hover:opacity-50 transition duration-250"
-            href="https://github.com/benweschler/buzz"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon icon={faGithub} size="2xl" />
-          </a>
-        </div>
-
-        <div className="bg-coffeeBlack p-[2rem] rounded-xl text-whip">
-          <h1 className={`${oswald.variable} font-oswald`}>Hackathon Project</h1>
-          <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>DoctorAMA</h1>
-          <p>DoctorAMA is a web-based medical chat app designed to fight discrimination against the LGBTQ+ community. 
-            Second-place winner in 2023 UCLA QWER Hacks: Health Category.</p>
-          <a
-            className="hover:opacity-50 transition duration-250"
-            href="https://github.com/Jared-Velasquez/doctor-ama"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon icon={faGithub} size="2xl" />
-          </a>
-        </div>
-
-        <div className="bg-coffeeBlack p-[2rem] rounded-xl text-whip">
-          <h1 className={`${oswald.variable} font-oswald`}>Hackathon Project</h1>
-          <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>Moonstruck</h1>
-          <p></p>
-          <a
-            className="hover:opacity-50 transition duration-250"
-            href="https://github.com/ayangelah/moonstruck"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon icon={faGithub} size="2xl" />
-          </a>
-        </div>
-
-        <div className="bg-coffeeBlack p-[2rem] rounded-xl text-whip">
-          <h1 className={`${oswald.variable} font-oswald`}>Personal Project</h1>
-          <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>InstaClone</h1>
-          <p>InstaClone is a social media app designed to share posts with friends across the world.</p>
-          <a
-            className="hover:opacity-50 transition duration-250"
-            href="https://github.com/Jared-Velasquez/InstaClone"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon icon={faGithub} size="2xl" />
-          </a>
-        </div>
+        {PROJECTS.map((project, index) => {
+          return <Project key={index} {...project}/>
+        })}
       </div>
     </section>
   );
