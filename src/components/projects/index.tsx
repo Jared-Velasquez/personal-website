@@ -2,6 +2,8 @@ import { cubicBezier, motion, MotionValue, useScroll, useTransform, Variants } f
 import { Chivo, Playfair, Oswald } from "next/font/google";
 import { useRef } from "react";
 import { SpinningText } from "../animated";
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const projectContainerVariant = {
   hidden: {},
@@ -36,6 +38,8 @@ interface PROJECT_INTERFACE {
   header: string,
   title: string,
   description: string,
+  githubLink?: string,
+  icons?: string[],
 }
 
 const PROJECTS: PROJECT_INTERFACE[] = [
@@ -47,7 +51,12 @@ const PROJECTS: PROJECT_INTERFACE[] = [
   {
     header: "Personal Project",
     title: "Edify",
-    description: ""
+    description: "Edify is a learning management system and student database management system made to handle the needs of academic institutions.",
+    githubLink: "https://github.com/Jared-Velasquez/Edify",
+    icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg", 
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg", 
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg", 
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"]
   },
   {
     header: "Class Project",
@@ -71,14 +80,34 @@ const PROJECTS: PROJECT_INTERFACE[] = [
   }
 ]
 
-/*const Project = ({title, header, description}: PROJECT_INTERFACE): JSX.Element => {
+const Project = ({title, header, description, githubLink, icons}: PROJECT_INTERFACE): JSX.Element => {
   return (
-    <div className="h-[20rem] bg-caramel p-[2rem] rounded-xl">
+    <div className="bg-coffeeBlack p-[2rem] rounded-xl text-whip">
       <h1 className={`${oswald.variable} font-oswald`}>{header}</h1>
       <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>{title}</h1>
+      <p className="mt-[1rem] mb-[1rem]">{description}</p>
+      
+      {/* Icons */}
+      <div className="flex flex-row">
+        {githubLink && <a
+          className="hover:opacity-50 transition duration-250 mr-[2.5rem]"
+          href={githubLink}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FontAwesomeIcon icon={faGithub} size="2xl" />
+        </a>}
+
+        <div className="flex flex-row">
+          {icons?.map((icon, index) => (
+            <img key={index} src={icon} className="mr-[1rem] h-[35px] w-[35px] sm:h-[35px] sm:w-[35px] md:h-[35px] md:w-[35px] lg:h-[35px] lg:w-[35px]" />
+          ))}
+        </div>
+
+      </div>
     </div>
   );
-}*/
+}
 
 const index = (): JSX.Element => {
   return (
@@ -105,44 +134,71 @@ const index = (): JSX.Element => {
         {/*PROJECTS.map((project, index) => {
           return <Project key={index} header={project.header} title={project.title}/>
         })*/}
-        <div className="h-[20rem] bg-caramel p-[2rem] rounded-xl">
+        <div className="bg-coffeeBlack p-[2rem] rounded-xl text-whip">
           <h1 className={`${oswald.variable} font-oswald`}>UCLA eHealth Research Lab</h1>
           <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>Camradia</h1>
           <p>Camradia is an ongoing mental health research project and social media app designed to promote 
             physical fitness, mental wellbeing, and group activity.</p>
         </div>
 
-        <div className="h-[20rem] bg-caramel p-[2rem] rounded-xl">
-          <h1 className={`${oswald.variable} font-oswald`}>Personal Project</h1>
-          <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>Edify</h1>
-          <p>Edify is a learning management system and student database management system made to handle the 
-            needs of academic institutions.</p>
-        </div>
+        <Project {...PROJECTS[1]}/>
 
-        <div className="h-[20rem] bg-caramel p-[2rem] rounded-xl">
+        <div className="bg-coffeeBlack p-[2rem] rounded-xl text-whip">
           <h1 className={`${oswald.variable} font-oswald`}>Class Project</h1>
           <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>Buzz</h1>
           <p>Buzz is a web application that centralizes information about student organizations at UCLA and enables 
             users to host and join events on the campus.</p>
+          <a
+            className="hover:opacity-50 transition duration-250"
+            href="https://github.com/benweschler/buzz"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} size="2xl" />
+          </a>
         </div>
 
-        <div className="h-[20rem] bg-caramel p-[2rem] rounded-xl">
+        <div className="bg-coffeeBlack p-[2rem] rounded-xl text-whip">
           <h1 className={`${oswald.variable} font-oswald`}>Hackathon Project</h1>
           <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>DoctorAMA</h1>
           <p>DoctorAMA is a web-based medical chat app designed to fight discrimination against the LGBTQ+ community. 
             Second-place winner in 2023 UCLA QWER Hacks: Health Category.</p>
+          <a
+            className="hover:opacity-50 transition duration-250"
+            href="https://github.com/Jared-Velasquez/doctor-ama"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} size="2xl" />
+          </a>
         </div>
 
-        <div className="h-[20rem] bg-caramel p-[2rem] rounded-xl">
+        <div className="bg-coffeeBlack p-[2rem] rounded-xl text-whip">
           <h1 className={`${oswald.variable} font-oswald`}>Hackathon Project</h1>
           <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>Moonstruck</h1>
           <p></p>
+          <a
+            className="hover:opacity-50 transition duration-250"
+            href="https://github.com/ayangelah/moonstruck"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} size="2xl" />
+          </a>
         </div>
 
-        <div className="h-[20rem] bg-caramel p-[2rem] rounded-xl">
+        <div className="bg-coffeeBlack p-[2rem] rounded-xl text-whip">
           <h1 className={`${oswald.variable} font-oswald`}>Personal Project</h1>
           <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>InstaClone</h1>
-          <p>InstaClone is a social media app designed to share posts with freinds across the world.</p>
+          <p>InstaClone is a social media app designed to share posts with friends across the world.</p>
+          <a
+            className="hover:opacity-50 transition duration-250"
+            href="https://github.com/Jared-Velasquez/InstaClone"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} size="2xl" />
+          </a>
         </div>
       </div>
     </section>
