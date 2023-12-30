@@ -155,7 +155,7 @@ const Project = ({title, header, description, githubLink, websiteLink, icons}: P
 
         <div className="flex flex-row">
           {icons?.map((icon, index) => (
-            <Image key={index} alt={"Skill Icon"} src={icon} className="mr-[1rem] h-[35px] w-[35px] sm:h-[35px] sm:w-[35px] md:h-[35px] md:w-[35px] lg:h-[35px] lg:w-[35px]" />
+            <Image key={index} alt={"Skill Icon"} src={icon} width={35} height={35} className="mr-[1rem] h-[35px] w-[35px] sm:h-[35px] sm:w-[35px] md:h-[35px] md:w-[35px] lg:h-[35px] lg:w-[35px]" />
           ))}
         </div>
 

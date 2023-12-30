@@ -192,7 +192,7 @@ const SkillsIcon = ({src, title, index, length, isAboveSmallScreens}: {src: stri
         viewport={{ once: true, amount: 0.25 }}
         variants={skillVariantsSmall}
       >
-        <Image src={src} alt={title} className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
+        <Image src={src} alt={title} width={45} height={45} className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
         <p className={`${oswald.variable} font-oswald text-xl font-light select-none`}>{title}</p>
       </motion.div>
     );
@@ -209,7 +209,7 @@ const SkillsIcon = ({src, title, index, length, isAboveSmallScreens}: {src: stri
         viewport={{ once: true, amount: 0.25 }}
         variants={skillVariants}
       >
-        <Image src={src} alt={title} className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
+        <Image src={src} alt={title} width={45} height={45} className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
         <p className={`${oswald.variable} font-oswald text-xl font-light select-none`}>{title}</p>
       </motion.div>
     );

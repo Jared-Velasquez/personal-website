@@ -28,7 +28,9 @@ const Index = (): JSX.Element => {
         <Image
           alt="profile"
           className="rounded-[5rem] saturate-150 hover:filter hover:saturate-200 transition duration-500 hover:scale-105 transition duration-300 z-10 w-full max-w-[400px] md:max-w-[600px]"
-          src="images/intro.jpg"
+          src="/images/intro.jpg"
+          width={400}
+          height={500}
         />
       </motion.div>
       
