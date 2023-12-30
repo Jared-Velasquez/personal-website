@@ -7,16 +7,14 @@ import Projects from '@/components/projects';
 import Footer from '@/components/footer';
 import { useEffect, useState } from "react";
 
-import styles from './styles.module.css';
 import Navbar from "@/components/navbar/Navbar";
-import { useRouter } from "next/navigation";
 import useMediaQuery from "./hooks/useMediaQuery";
 
 
 export default function Home() {
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  //const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
   useEffect(() => {
     const handleScroll = () => {

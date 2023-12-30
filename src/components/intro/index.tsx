@@ -5,8 +5,9 @@ import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope  } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faDev } from '@fortawesome/free-brands-svg-icons';
+import Image from 'next/image';
 
-const index = (): JSX.Element => {
+const Index = (): JSX.Element => {
   return (
     <section
       id="home"
@@ -24,7 +25,7 @@ const index = (): JSX.Element => {
           visible: { opacity: 1, x: 0 },
         }}
       >
-        <img
+        <Image
           alt="profile"
           className="rounded-[5rem] saturate-150 hover:filter hover:saturate-200 transition duration-500 hover:scale-105 transition duration-300 z-10 w-full max-w-[400px] md:max-w-[600px]"
           src="images/intro.jpg"
@@ -46,7 +47,7 @@ const index = (): JSX.Element => {
           }}
         >
           <p className="text-5xl font-playfair z-10 text-center md:text-start">
-            Hi, I'm <span className="font-semibold">Jared Velasquez.</span>
+            Hi, I&apos;m <span className="font-semibold">Jared Velasquez.</span>
           </p>
         </motion.div>
 
@@ -61,7 +62,7 @@ const index = (): JSX.Element => {
           }}
         >
           <p className="mt-5 mb-7 text-md text-center md:text-start">
-            I'm an aspiring full-stack developer and a student studying Computer Science and Engineering at the University of California, Los Angeles.
+            I&apos;m an aspiring full-stack developer and a student studying Computer Science and Engineering at the University of California, Los Angeles.
           </p>
         </motion.div>
 
@@ -116,7 +117,7 @@ const index = (): JSX.Element => {
             target="_blank"
             rel="noreferrer"
           >
-            <img width="35" height="35" src="https://img.icons8.com/ios/100/resume.png" alt="resume"/>
+            <Image width="35" height="35" src="https://img.icons8.com/ios/100/resume.png" alt="resume"/>
           </a>
         </motion.div>
       </div>
@@ -124,4 +125,4 @@ const index = (): JSX.Element => {
   );
 }
 
-export default index;
+export default Index;

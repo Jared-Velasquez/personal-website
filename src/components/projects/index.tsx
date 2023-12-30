@@ -5,6 +5,7 @@ import { SpinningText } from "../animated";
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from "next/image";
 
 const projectContainerVariant = {
   hidden: {},
@@ -154,7 +155,7 @@ const Project = ({title, header, description, githubLink, websiteLink, icons}: P
 
         <div className="flex flex-row">
           {icons?.map((icon, index) => (
-            <img key={index} src={icon} className="mr-[1rem] h-[35px] w-[35px] sm:h-[35px] sm:w-[35px] md:h-[35px] md:w-[35px] lg:h-[35px] lg:w-[35px]" />
+            <Image key={index} alt={"Skill Icon"} src={icon} className="mr-[1rem] h-[35px] w-[35px] sm:h-[35px] sm:w-[35px] md:h-[35px] md:w-[35px] lg:h-[35px] lg:w-[35px]" />
           ))}
         </div>
 
@@ -163,7 +164,7 @@ const Project = ({title, header, description, githubLink, websiteLink, icons}: P
   );
 }
 
-const index = (): JSX.Element => {
+const Index = (): JSX.Element => {
   return (
     <section id="projects" className="flex flex-col justify-center items-center mt-[2.5rem]">
       <motion.div
@@ -194,4 +195,4 @@ const index = (): JSX.Element => {
   );
 }
 
-export default index;
+export default Index;

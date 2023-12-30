@@ -4,6 +4,7 @@ import useMediaQuery from "@/app/hooks/useMediaQuery";
 import { motion, Variants } from "framer-motion";
 import { Chivo } from "next/font/google";
 import { Oswald } from "next/font/google";
+import Image from "next/image";
 import { useEffect } from "react";
 import { SpinningText } from "../animated";
 
@@ -191,7 +192,7 @@ const SkillsIcon = ({src, title, index, length, isAboveSmallScreens}: {src: stri
         viewport={{ once: true, amount: 0.25 }}
         variants={skillVariantsSmall}
       >
-        <img src={src} className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
+        <Image src={src} alt={title} className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
         <p className={`${oswald.variable} font-oswald text-xl font-light select-none`}>{title}</p>
       </motion.div>
     );
@@ -208,14 +209,14 @@ const SkillsIcon = ({src, title, index, length, isAboveSmallScreens}: {src: stri
         viewport={{ once: true, amount: 0.25 }}
         variants={skillVariants}
       >
-        <img src={src} className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
+        <Image src={src} alt={title} className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
         <p className={`${oswald.variable} font-oswald text-xl font-light select-none`}>{title}</p>
       </motion.div>
     );
   }
 }
 
-const index = (): JSX.Element => {
+const Index = (): JSX.Element => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   
   return (
@@ -274,4 +275,4 @@ const index = (): JSX.Element => {
   );
 }
 
-export default index;
+export default Index;
