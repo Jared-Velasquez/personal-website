@@ -1,9 +1,10 @@
 "use client";
 
 import Intro from "@/components/intro";
+import About from "@/components/about";
 import Skills from '@/components/skills';
 import Projects from '@/components/projects';
-//import Lenis from "@studio-freight/lenis";
+import Footer from '@/components/footer';
 import { useEffect, useState } from "react";
 
 import styles from './styles.module.css';
@@ -34,10 +35,16 @@ export default function Home() {
         <Intro />
       </div>
       <div className="w-5/6 mx-auto md:h-fit">
+        <About />
+      </div>
+      <div className="w-5/6 mx-auto md:h-fit">
         <Skills />
       </div>
-      <div className="w-5/6 mx-auto md:h-full">
+      <div className="w-5/6 mx-auto md:h-fit">
         <Projects />
+      </div>
+      <div className="w-5/6 mx-auto md:h-fit">
+        <Footer />
       </div>
     </div>
   );

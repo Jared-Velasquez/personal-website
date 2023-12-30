@@ -107,24 +107,6 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: { isTopOfPage: b
                 setSelectedPage={setSelectedPage}
               />
             </motion.div>
-
-            {/* RESUME LINK */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              variants={{
-                hidden: { opacity: 0, x: 50 },
-                visible: { opacity: 1, x: 0 },
-              }}
-            >
-              <NavbarLink 
-                page="Resume"
-                selectedPage={selectedPage}
-                setSelectedPage={setSelectedPage}
-              />
-            </motion.div>
           </div>
         ) : (
           <motion.button 
@@ -167,11 +149,6 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: { isTopOfPage: b
               />
               <NavbarLink 
                 page="Projects"
-                selectedPage={selectedPage}
-                setSelectedPage={setSelectedPage}
-              />
-              <NavbarLink 
-                page="Resume"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />

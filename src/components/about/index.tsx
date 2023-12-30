@@ -3,7 +3,7 @@ const description = "Hi! My name is Jared Velasquez and I am a highly motivated 
 const index = (): JSX.Element => {
   return (
     <section id="about">
-
+        
     </section>
   );
 }

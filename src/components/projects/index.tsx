@@ -49,6 +49,7 @@ const PROJECTS: PROJECT_INTERFACE[] = [
     header: "UCLA eHealth Research Lab",
     title: "Camradia",
     description: "Camradia is an ongoing mental health research project and social media app designed to promote physical fitness, mental wellbeing, and group activity.",
+    websiteLink: "https://camradia.com/",
     icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", 
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
@@ -72,7 +73,7 @@ const PROJECTS: PROJECT_INTERFACE[] = [
     description: "Buzz is a web application that centralizes information about student organizations at UCLA and enables users to host and join events on the campus.",
     githubLink: "https://github.com/benweschler/buzz",
     icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg", 
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    "https://adware-technologies.s3.amazonaws.com/uploads/technology/thumbnail/20/express-js.png",
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"],
   },
@@ -92,7 +93,7 @@ const PROJECTS: PROJECT_INTERFACE[] = [
     githubLink: "https://github.com/ayangelah/moonstruck",
     websiteLink: "https://moon-struck.tech/",
     icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg", 
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    "https://adware-technologies.s3.amazonaws.com/uploads/technology/thumbnail/20/express-js.png",
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"]
   },
@@ -108,7 +109,23 @@ const PROJECTS: PROJECT_INTERFACE[] = [
 
 const Project = ({title, header, description, githubLink, websiteLink, icons}: PROJECT_INTERFACE): JSX.Element => {
   return (
-    <div className="flex flex-col justify-evenly bg-coffeeBlack p-[2rem] rounded-xl text-whip">
+    <motion.div 
+      className="flex flex-col justify-evenly bg-coffeeBlack p-[2rem] rounded-xl text-whip"
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 1 }}
+      variants={{
+        initial: {
+          opacity: 0,
+          y: 50
+        },
+        animate: {
+          opacity: 1,
+          y: 0
+        }
+      }}
+    >
       <h1 className={`${oswald.variable} font-oswald`}>{header}</h1>
       <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>{title}</h1>
       <p className="mt-[1rem] mb-[1rem]">{description}</p>
@@ -142,7 +159,7 @@ const Project = ({title, header, description, githubLink, websiteLink, icons}: P
         </div>
 
       </div>
-    </div>
+    </motion.div>
   );
 }
 

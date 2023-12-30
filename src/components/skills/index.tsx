@@ -180,7 +180,7 @@ const SkillsIcon = ({src, title, index, length, isAboveSmallScreens}: {src: stri
   if (!isAboveSmallScreens) {
     return (
       <motion.div 
-        className="flex flex-col items-center transition duration-300 hover:scale-110 select-none cursor-pointer"
+        className="flex flex-col items-center transition duration-150 hover:scale-105 select-none cursor-pointer"
         onClick={() => console.log(title)}
         whileHover={{
           scale: 1.15,
@@ -198,7 +198,7 @@ const SkillsIcon = ({src, title, index, length, isAboveSmallScreens}: {src: stri
   } else {
     return (
       <motion.div 
-        className="flex flex-col items-center transition duration-300 hover:scale-110 select-none"
+        className="flex flex-col items-center transition duration-150 hover:scale-105 select-none"
         whileHover={{
           scale: 1.15,
         }}
