@@ -6,6 +6,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from "next/image";
+import useMediaQuery from "@/app/hooks/useMediaQuery";
 
 const projectContainerVariant = {
   hidden: {},
@@ -109,6 +110,9 @@ const PROJECTS: PROJECT_INTERFACE[] = [
 ]
 
 const Project = ({title, header, description, githubLink, websiteLink, icons}: PROJECT_INTERFACE): JSX.Element => {
+  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
+
+
   return (
     <motion.div 
       className="flex flex-col justify-evenly bg-coffeeBlack p-[2rem] rounded-xl text-whip"
@@ -127,39 +131,69 @@ const Project = ({title, header, description, githubLink, websiteLink, icons}: P
         }
       }}
     >
-      <h1 className={`${oswald.variable} font-oswald`}>{header}</h1>
-      <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>{title}</h1>
-      <p className="mt-[1rem] mb-[1rem]">{description}</p>
-      
-      {/* Icons */}
-      <div className="flex flex-row bottom-0">
-        {(githubLink || websiteLink) && <div className="pr-[1rem] border-r-2 rounded-sm mr-[1.5rem]">
-          {githubLink && <a
-            className="hover:opacity-50 transition duration-250 mr-[1rem]"
-            href={githubLink}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon icon={faGithub} size="2xl" />
-          </a>}
+      {isAboveSmallScreens ? <>
+        <h1 className={`${oswald.variable} font-oswald`}>{header}</h1>
+        <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>{title}</h1>
+        <p className="mt-[1rem] mb-[1rem]">{description}</p>
+        
+        {/* Icons */}
+        <div className="flex flex-row bottom-0">
+          {(githubLink || websiteLink) && <div className="pr-[1rem] border-r-2 rounded-sm mr-[1.5rem]">
+            {githubLink && <a
+              className="hover:opacity-50 transition duration-250 mr-[1rem]"
+              href={githubLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faGithub} size="2xl" />
+            </a>}
 
-          {websiteLink && <a
-            className="hover:opacity-50 transition duration-250"
-            href={websiteLink}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon icon={faLink} size="2xl" />
-          </a>}
-        </div>}
+            {websiteLink && <a
+              className="hover:opacity-50 transition duration-250"
+              href={websiteLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faLink} size="2xl" />
+            </a>}
+          </div>}
 
-        <div className="flex flex-row">
+          <div className="flex flex-row">
+            {icons?.map((icon, index) => (
+              <Image key={index} alt={"Skill Icon"} src={icon} width={35} height={35} className="mr-[1rem] h-[30px] w-[30px] sm:h-[35px] sm:w-[35px]" />
+            ))}
+          </div>
+        </div>
+      </> : <>
+        <h1 className={`${oswald.variable} font-oswald`}>{header}</h1>
+        <h1 className={`${chivo.variable} text-xl font-bold mt-[0.5rem]`}>{title}</h1>
+        <div className="flex flex-row mt-[0.5rem]">
           {icons?.map((icon, index) => (
-            <Image key={index} alt={"Skill Icon"} src={icon} width={35} height={35} className="mr-[1rem] h-[35px] w-[35px] sm:h-[35px] sm:w-[35px] md:h-[35px] md:w-[35px] lg:h-[35px] lg:w-[35px]" />
+            <Image key={index} alt={"Skill Icon"} src={icon} width={35} height={35} className="mr-[1rem] h-[30px] w-[30px] sm:h-[35px] sm:w-[35px]" />
           ))}
         </div>
+        <p className="mt-[1rem] mb-[1rem]">{description}</p>
 
-      </div>
+        {(githubLink || websiteLink) && <div className="pr-[1rem] rounded-sm mr-[1.5rem]">
+            {githubLink && <a
+              className="hover:opacity-50 transition duration-250 mr-[1rem]"
+              href={githubLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faGithub} size="2xl" />
+            </a>}
+
+            {websiteLink && <a
+              className="hover:opacity-50 transition duration-250"
+              href={websiteLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faLink} size="2xl" />
+            </a>}
+        </div>}
+      </>}
     </motion.div>
   );
 }

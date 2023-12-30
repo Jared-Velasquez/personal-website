@@ -7,6 +7,7 @@ import { Oswald } from "next/font/google";
 import Image from "next/image";
 import { useEffect } from "react";
 import { SpinningText } from "../animated";
+import './style.css';
 
 interface ICON_INTERFACE {
   src: string,
@@ -190,10 +191,11 @@ const SkillsIcon = ({src, title, index, length, isAboveSmallScreens}: {src: stri
         initial="initialSmall"
         whileInView="animateSmall"
         viewport={{ once: true, amount: 0.25 }}
+        transition={{ delay: 0.5 }}
         variants={skillVariantsSmall}
       >
-        <Image src={src} alt={title} width={45} height={45} className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
-        <p className={`${oswald.variable} font-oswald text-xl font-light select-none`}>{title}</p>
+        <Image src={src} alt={title} width={45} height={45} className="skills-icon h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
+        <p className={`skills-icon ${oswald.variable} font-oswald text-xl font-light select-none`}>{title}</p>
       </motion.div>
     );
   } else {
@@ -207,10 +209,11 @@ const SkillsIcon = ({src, title, index, length, isAboveSmallScreens}: {src: stri
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.25 }}
+        transition={{ delay: 0.5 }}
         variants={skillVariants}
       >
-        <Image src={src} alt={title} width={45} height={45} className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
-        <p className={`${oswald.variable} font-oswald text-xl font-light select-none`}>{title}</p>
+        <Image src={src} alt={title} width={45} height={45} className="skills-icon h-[45px] w-[45px] sm:h-[55px] sm:w-[55px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px]" />
+        <p className={`skills-icon ${oswald.variable} font-oswald text-xl font-light select-none`}>{title}</p>
       </motion.div>
     );
   }
