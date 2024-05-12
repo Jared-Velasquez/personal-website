@@ -97,7 +97,7 @@ const SKILLS: ICON_INTERFACE[] = [
     title: "C",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
     title: "C++",
   },
   {
