@@ -48,6 +48,14 @@ interface PROJECT_INTERFACE {
 
 const PROJECTS: PROJECT_INTERFACE[] = [
   {
+    header: "UCLA Sensing and Robotics for Infrastructure Lab",
+    title: "Graph SLAM Simulator",
+    description: "Graph SLAM Simulator generates single and multi-robot RA-SLAM measurements in random Manhattan worlds and, eventually, controlled experiments in both 2D and 3D.",
+    githubLink: "https://github.com/adthoms/manhattan-world-sim/tree/main",
+    websiteLink: "https://sri-lab.seas.ucla.edu/",
+    icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"]
+  },
+  {
     header: "UCLA eHealth Research Lab",
     title: "Camradia",
     description: "Camradia is an ongoing mental health research project and social media app designed to promote physical fitness, mental wellbeing, and group activity.",
