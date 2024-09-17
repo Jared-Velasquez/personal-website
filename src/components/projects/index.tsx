@@ -56,6 +56,13 @@ const PROJECTS: PROJECT_INTERFACE[] = [
     icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"]
   },
   {
+    header: "UCLA Sensing and Robotics for Infrastructure Lab",
+    title: "Synthetic PyFactorGraph Datasets",
+    description: "Various scripts for synthesizing and augmenting RA-SLAM datasets in the PyFactorGraph format. This includes generating multi-robot datasets with inter-robot and robot-landmark range measurements, reindexing of landmarks for a distributed setting, range measurement modifiers, and more.",
+    githubLink: "https://github.com/Jared-Velasquez?tab=repositories",
+    icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"]
+  },
+  {
     header: "UCLA eHealth Research Lab",
     title: "Camradia",
     description: "Camradia is an ongoing mental health research project and social media app designed to promote physical fitness, mental wellbeing, and group activity.",
