@@ -127,7 +127,6 @@ const PROJECTS: PROJECT_INTERFACE[] = [
 const Project = ({title, header, description, githubLink, websiteLink, icons}: PROJECT_INTERFACE): JSX.Element => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 
-
   return (
     <motion.div 
       className="flex flex-col justify-evenly bg-coffeeBlack p-[2rem] rounded-xl text-whip"
