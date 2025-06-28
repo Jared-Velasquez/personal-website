@@ -28,11 +28,17 @@ const oswald = Oswald({
 
 const ROLES: ROLE_INTERFACE[] = [
     {
+        header: "AEG Worldwide",
+        title: "Application Developer Intern",
+        description: "I lead the develeopment of a modern financial application by architecting a scalable, serverless solution on Azure using CQRS, Durable Functions, and Cosmos DB. I integrated Microsoft Entra ID for secure authentication, implemented JWT validation and caching at the API Gateway, and built a .NET MAUI frontend.",
+        icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-plain-wordmark.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"]
+    },
+    {
         header: "Pilipinos in Engineering and Science @ UCLA",
         title: "Technical Lead",
-        description: "I am responsible for facilitating and leading backend development and system design workshops. I mentor club members, manage the implementation of projects, and collaborate with teams to deliver impactful technical solutions.",
+        description: "I mentor club members through backend development and system design workshops. I spearhead the architecture of scalable cloud solutions, including a Tagalog language learning app built with AWS Lambda, EventBridge, and Fargate. This project integrates Java Spring, FastAPI, and ML microservices to deliver personalized, real-time user experiences.",
         websiteLink: "https://piesucla.wixsite.com/pies",
-        icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"]
+        icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"]
     },
     {
         header: "ACM Cloud @ UCLA",
