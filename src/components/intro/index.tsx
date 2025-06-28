@@ -114,7 +114,7 @@ const Index = (): JSX.Element => {
           </a>
           <a
             className="hover:opacity-50 transition duration-250 -ml-[0.15rem]"
-            href="/jvelasquez-nov2024.pdf"
+            href="/jvelasquez-resume-jun2025.pdf"
             target="_blank"
             rel="noreferrer"
           >
