@@ -27,11 +27,6 @@ const chivo = Chivo({
   variable: '--font-chivo',
 });
 
-const playfair = Playfair({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-});
-
 const oswald = Oswald({
   subsets: ['latin'],
   variable: '--font-oswald',

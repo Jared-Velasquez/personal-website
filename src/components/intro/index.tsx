@@ -64,7 +64,7 @@ const Index = (): JSX.Element => {
           }}
         >
           <p className="mt-5 mb-7 text-md text-center md:text-start">
-            I&apos;m an aspiring full-stack developer and a student studying Computer Science and Engineering at the University of California, Los Angeles.
+            I&apos;m a backend developer currently pursuing a Master's degree in Computer Science at UCLA.
           </p>
         </motion.div>
 
@@ -114,7 +114,7 @@ const Index = (): JSX.Element => {
           </a>
           <a
             className="hover:opacity-50 transition duration-250 -ml-[0.15rem]"
-            href="/jvelasquez-resume-jun2025.pdf"
+            href="/jvelasquez-resume-aug2025.pdf"
             target="_blank"
             rel="noreferrer"
           >
