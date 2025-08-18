@@ -3,6 +3,7 @@
 import Intro from "@/components/intro";
 import About from "@/components/about";
 import Skills from '@/components/skills';
+import Positions from '@/components/roles';
 import Projects from '@/components/projects';
 import Footer from '@/components/footer';
 import { useEffect, useState } from "react";
@@ -37,6 +38,9 @@ export default function Home() {
       </div>
       <div className="w-5/6 mx-auto md:h-fit">
         <Skills />
+      </div>
+      <div className="w-5/6 mx-auto md:h-fit">
+        <Positions />
       </div>
       <div className="w-5/6 mx-auto md:h-fit">
         <Projects />
