@@ -64,7 +64,7 @@ const Index = (): JSX.Element => {
           }}
         >
           <p className="mt-5 mb-7 text-md text-center md:text-start">
-            I&apos;m a backend developer currently pursuing a Master's degree in Computer Science at UCLA.
+            I&apos;m a backend developer currently pursuing a Master&apos;s degree in Computer Science at UCLA.
           </p>
         </motion.div>
 

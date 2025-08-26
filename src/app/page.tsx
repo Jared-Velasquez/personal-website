@@ -6,11 +6,6 @@ import Skills from '@/components/skills';
 import Positions from '@/components/roles';
 import Projects from '@/components/projects';
 import Footer from '@/components/footer';
-import { useEffect, useState } from "react";
-
-import Navbar from "@/components/navbar/Navbar";
-import useMediaQuery from "./hooks/useMediaQuery";
-
 
 export default function Home() {
   return (
