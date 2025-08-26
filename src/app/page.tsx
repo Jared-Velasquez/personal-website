@@ -14,9 +14,6 @@ export default function Home() {
         <Intro />
       </div>
       <div className="w-5/6 mx-auto md:h-fit">
-        <About />
-      </div>
-      <div className="w-5/6 mx-auto md:h-fit">
         <Skills />
       </div>
       <div className="w-5/6 mx-auto md:h-fit">
