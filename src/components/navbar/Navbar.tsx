@@ -9,18 +9,43 @@ import { AnimatePresence, motion, useCycle } from 'framer-motion';
 
 import './style.css';
 import useOutsideClick from '@/app/hooks/useOutsideClick';
+import Link from 'next/link';
 
-const NavbarLink = ({ page, selectedPage, setSelectedPage }: { page: string, selectedPage: string, setSelectedPage: React.Dispatch<React.SetStateAction<string>> }) => {
-  const lowerCasePage = page.toLowerCase();
+
+const NavbarLink = ({
+  page,
+  selectedPage,
+  setSelectedPage,
+}: {
+  page: string;
+  selectedPage: string;
+  setSelectedPage: React.Dispatch<React.SetStateAction<string>>;
+}) => {
+  const id = page.toLowerCase(); // "home" | "skills" | "projects"
   return (
-    <AnchorLink 
-      className={`${selectedPage === lowerCasePage ? 'text-yellow-500' : ''} hover:text-yellow-500 transition duration-500`}
-      href={`$${lowerCasePage}`}
-      onClick={() => setSelectedPage(lowerCasePage)}
-      offset='65'
+    <Link
+      className={`${selectedPage === id ? "text-yellow-500" : ""} hover:text-yellow-500 transition duration-500`}
+      href={{ pathname: "/", hash: id }}   // <= works from ANY route
+      onClick={() => setSelectedPage(id)}
+      scroll
     >
       {page}
-    </AnchorLink>
+    </Link>
+  );
+};
+
+const ArticleLink = ({ page, selectedPage, setSelectedPage }: { page: string, selectedPage: string, setSelectedPage: React.Dispatch<React.SetStateAction<string>> }) => {
+  const lowerCasePage = page.toLowerCase();
+
+  // Instead of going to the next section, move to a different page
+  return (
+    <Link
+      className={`${selectedPage === lowerCasePage ? 'text-yellow-500' : ''} hover:text-yellow-500 transition duration-500`}
+      href={`/${lowerCasePage}`} // Change this line to navigate to a different page
+      onClick={() => setSelectedPage(lowerCasePage)}
+    >
+      {page}
+    </Link>
   );
 }
 
@@ -48,7 +73,7 @@ const itemVariants = {
   }
 }
 
-const links = ["Home", "Skills", "Projects"];
+const links = ["Home", "Skills", "Projects", "Articles"];
 
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: { isTopOfPage: boolean, selectedPage: string, setSelectedPage: React.Dispatch<React.SetStateAction<string>>}) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
@@ -135,6 +160,24 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: { isTopOfPage: b
             >
               <NavbarLink 
                 page="Projects"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+            </motion.div>
+
+            {/* ARTICLES LINK */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              variants={{
+                hidden: { opacity: 0, x: 50 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
+              <ArticleLink 
+                page="Articles"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />
