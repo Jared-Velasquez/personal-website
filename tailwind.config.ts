@@ -19,13 +19,10 @@ const config: Config = {
         playfair: ['var(--font-playfair)'],
       },
       colors: {
-        coffeeBlack: 'rgb(34, 15, 17)',
-        mocha: '#382a1d',
-        caramel: '#8f614b',
-        heavyCream: '#b697d',
-        whip: 'rgb(234, 224, 211)',
-        whipDark: '#DAC8B0',
-        sage: '#9eab9a',
+        background: '#1C1C1C',
+        primary: '#BFA181',
+        secondary: '#D4C5B0',
+        accent: '#F4F4F4',
       },
       aspectRatio: {
         intro: '0.74993'

@@ -8,23 +8,23 @@ import { Contact } from "@/app/components/Contact";
 import { SocialLinks, EmailLink } from "@/app/components/SocialLinks";
 import { Footer } from "@/app/components/Footer";
 
-export default function App() {
+export default function Home() {
   return (
     <div className="min-h-screen">
-      <Navigation />
+      {/* <Navigation />
       <SocialLinks />
-      <EmailLink />
+      <EmailLink /> */}
 
       <main>
         <Hero />
-        <About />
+        {/* <About />
         <Experience />
         <Projects />
         <Blog />
-        <Contact />
+        <Contact /> */}
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
