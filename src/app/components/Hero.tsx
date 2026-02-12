@@ -35,9 +35,9 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          I'm a software engineer specializing in building exceptional digital
-          experiences. Currently, I'm focused on creating accessible,
-          human-centered products.
+          I'm an M.S. CS student at UCLA with a passion for software
+          architecture, cloud solutions, and building scalable and reliable
+          backend systems.
         </motion.p>
 
         <motion.a
