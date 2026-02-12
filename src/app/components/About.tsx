@@ -40,7 +40,7 @@ export function About() {
 
           <div className="grid md:grid-cols-5 gap-10">
             <div className="md:col-span-3 space-y-4 text-secondary">
-              <p>Hello! I'm Jared, a passionate software engineer...</p>
+              <p>Hello! I'm Jared, a passionate software engineer. I'm energized by projects that bring people together and bring lasting community impact...</p>
 
               <p>
                 Here are a few technologies I've been working with recently:
