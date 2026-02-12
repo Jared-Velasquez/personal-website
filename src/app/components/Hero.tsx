@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { ArrowDown } from "lucide-react";
+import { SocialLinks } from "./SocialLinks";
 
 export function Hero() {
   return (
@@ -30,7 +31,7 @@ export function Hero() {
         </motion.h1>
 
         <motion.p
-          className="text-secondary max-w-xl text-lg mb-12"
+          className="text-secondary max-w-xl text-lg mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
@@ -40,17 +41,7 @@ export function Hero() {
           backend systems.
         </motion.p>
 
-        <motion.a
-          href="#projects"
-          className="inline-flex items-center gap-2 px-8 py-4 border-2 border-primary text-primary rounded hover:bg-primary/10 transition-colors"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Check out my work
-        </motion.a>
+        <SocialLinks />
       </motion.div>
 
       <motion.div
