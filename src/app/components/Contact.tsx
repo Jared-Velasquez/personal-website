@@ -21,7 +21,7 @@ export function Contact() {
         <h2 className="font-serif text-4xl md:text-5xl text-cream mb-6">
           Thank you for reading.
         </h2>
-        <p className="text-mocha text-lg leading-relaxed mb-12">
+        <p className="font-sans text-coffee-200 leading-relaxed mb-12">
           I&apos;m currently looking for new grad software engineering
           opportunities and my inbox is always open. Send me an email if
           you&apos;d like to connect.

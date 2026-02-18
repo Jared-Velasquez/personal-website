@@ -40,6 +40,13 @@ const projects: Project[] = [
     github: "https://github.com/Jared-Velasquez/leetcode-scheduler",
     external: "https://leetcodescheduler.com/",
   },
+  {
+    title: "Research Project",
+    name: "3D Manhattan World Simulator",
+    description: "A simulator for the generation of random single and multi-robot range-aided 3D SLAM experiments. Supports the generation of random Manhattan worlds and controlled experiments with parameterized robot navigation and map feature placement.",
+    tech: ["Python", "RA-SLAM"],
+    github: "https://github.com/adthoms/manhattan-world-sim",
+  }
 ];
 
 export function Projects() {
