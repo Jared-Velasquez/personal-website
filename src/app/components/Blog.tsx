@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
 import { Calendar, Clock, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useInView } from "./useInView";
@@ -156,10 +157,11 @@ function BlogCard({
         >
             <div className="relative overflow-hidden h-48">
                 <div className="absolute inset-0 bg-emerald-500/20 group-hover:bg-transparent transition-colors z-10"></div>
-                <img
+                <Image
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 right-4 z-20">
                     <span className="px-3 py-1 bg-emerald-500/90 text-slate-900 text-xs font-semibold rounded-full">

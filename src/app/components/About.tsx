@@ -40,7 +40,7 @@ export function About() {
         <div className="grid md:grid-cols-5 gap-12">
           <div className="md:col-span-3 space-y-5">
             <p className="font-sans text-coffee-200 leading-relaxed text-lg">
-              Hello! I&apos;m Jared, a M.S. CS student at UCLA &apos;26. I've had the opportunity to
+              Hello! I&apos;m Jared, a M.S. CS student at UCLA &apos;26. I&apos;ve had the opportunity to
               work across cloud infrastructure, robotics research, and full-stack development.
               My current focus is in the fields of microservices, reliability, and root cause localization.
               <br />

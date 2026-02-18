@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
 import { ArrowDown } from "lucide-react";
 import { SocialLinks } from "./SocialLinks";
@@ -14,10 +15,11 @@ export function Hero() {
         className="mb-8"
       >
         <div className="relative w-28 h-28 mx-auto rounded-full overflow-hidden">
-          <img
+          <Image
             src="/images/intro.jpg"
             alt="Jared Velasquez"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
         </div>
       </motion.div>
