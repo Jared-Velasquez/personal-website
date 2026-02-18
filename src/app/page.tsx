@@ -3,22 +3,18 @@ import { Hero } from "@/app/components/Hero";
 import { About } from "@/app/components/About";
 import { Experience } from "@/app/components/Experience";
 import { Projects } from "@/app/components/Projects";
-import { Blog } from "@/app/components/Blog";
 import { Contact } from "@/app/components/Contact";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* <Navigation />
-      <SocialLinks />
-      <EmailLink /> */}
+      <Navigation />
 
       <main>
         <Hero />
         <About />
         <Experience />
         <Projects />
-        {/* <Blog /> */}
         <Contact />
       </main>
     </div>
