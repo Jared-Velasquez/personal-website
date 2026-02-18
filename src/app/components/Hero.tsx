@@ -19,6 +19,7 @@ export function Hero() {
             src="/images/intro.jpg"
             alt="Jared Velasquez"
             fill
+            priority
             className="object-cover"
           />
         </div>
