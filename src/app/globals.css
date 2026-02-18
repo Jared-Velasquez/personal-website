@@ -3,26 +3,29 @@
 @tailwind utilities;
 
 html,
-body,
-.app {
+body {
   margin: 0;
   height: 100%;
-  background-color: rgb(234, 224, 211);
-  @apply text-coffeeBlack
+  background-color: #1A1410;
+  color: #F2E8DC;
 }
 
 html {
   max-width: 1920px;
+  scroll-behavior: smooth;
 }
 
-/* Hide scrollbar for IE, Edge, and Firefox */
 body {
   margin: 0px;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-/* Hide scrollbar for Chrome, Safari, and Opera */
 body::-webkit-scrollbar {
   display: none;
+}
+
+::selection {
+  background-color: #C4956A;
+  color: #1A1410;
 }

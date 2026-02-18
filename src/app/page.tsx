@@ -1,30 +1,22 @@
-"use client";
-
-import Intro from "@/components/intro";
-import About from "@/components/about";
-import Skills from '@/components/skills';
-import Positions from '@/components/roles';
-import Projects from '@/components/projects';
-import Footer from '@/components/footer';
+import { Navigation } from "@/app/components/Navigation";
+import { Hero } from "@/app/components/Hero";
+import { About } from "@/app/components/About";
+import { Experience } from "@/app/components/Experience";
+import { Projects } from "@/app/components/Projects";
+import { Contact } from "@/app/components/Contact";
 
 export default function Home() {
   return (
-    <div className="app bg-whip">
-      <div className="w-5/6 mx-auto md:h-full">
-        <Intro />
-      </div>
-      <div className="w-5/6 mx-auto md:h-fit">
-        <Skills />
-      </div>
-      <div className="w-5/6 mx-auto md:h-fit">
-        <Positions />
-      </div>
-      <div className="w-5/6 mx-auto md:h-fit">
+    <div className="min-h-screen">
+      <Navigation />
+
+      <main>
+        <Hero />
+        <About />
+        <Experience />
         <Projects />
-      </div>
-      <div className="w-5/6 mx-auto md:h-fit">
-        <Footer />
-      </div>
+        <Contact />
+      </main>
     </div>
   );
 }
