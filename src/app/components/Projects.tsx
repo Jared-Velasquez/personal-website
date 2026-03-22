@@ -15,8 +15,15 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Class Project",
+    name: "Pronghorn-Incremental",
+    description: "An extension of the Pronghorn serverless checkpoint orchestration system with CRIU-based incremental delta snapshots. Reduced average maximum storage and network bandwidth by 10.1% and average latency by 12.3% on key workloads.",
+    tech: ["Python", "Kubernetes", "OpenFaaS"],
+    github: "https://github.com/Jared-Velasquez/pronghorn-incremental",
+  },
+  {
     title: "Club Project",
-    name: "Liwanag",
+    name: "Liwanag (v1)",
     description:
       "A Tagalog language-learning app developed by students at Pilipinos in Engineering and Science (PIES) @ UCLA. Helps learners practice conversational Tagalog through interactive and personalized question sessions and gamified features.",
     tech: ["React Native", "Java Spring", "AWS"],
