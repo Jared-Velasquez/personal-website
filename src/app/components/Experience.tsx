@@ -4,15 +4,20 @@ import { motion } from "motion/react";
 import { useInView } from "./useInView";
 
 const experiences = [
+  // {
+  //   company: "SoCal Filipinos",
+  //   position: "Product Manager",
+  //   period: "Nov 2025 - Present",
+  //   responsibilities: [
+  //     "Lead product development and software architecture for social networking mobile app serving SoCal Filipino community, managing team of 5 developers and architecting scalable backend services in Java Spring.",
+  //     "Deploy containerized infrastructure on AWS ECS using Terraform IaC templates with automated CI/CD pipelines, implementing resilient design patterns to ensure system reliability at scale.",
+  //     "Implement event-driven data architecture using AWS EventBridge to emit events for data analytics pipelines, enabling real-time data processing and visualization capabilities while maintaining system scalability.",
+  //   ],
+  // },
   {
-    company: "SoCal Filipinos",
-    position: "Product Manager",
-    period: "Nov 2025 - Present",
-    responsibilities: [
-      "Lead product development and software architecture for social networking mobile app serving SoCal Filipino community, managing team of 5 developers and architecting scalable backend services in Java Spring.",
-      "Deploy containerized infrastructure on AWS ECS using Terraform IaC templates with automated CI/CD pipelines, implementing resilient design patterns to ensure system reliability at scale.",
-      "Implement event-driven data architecture using AWS EventBridge to emit events for data analytics pipelines, enabling real-time data processing and visualization capabilities while maintaining system scalability.",
-    ],
+    company: "AEG Worldwide",
+    position: "Associate Software Engineer",
+    period: "Jan. 2026 - Present"
   },
   {
     company: "AEG Worldwide",
@@ -93,7 +98,7 @@ export function Experience() {
                 </div>
 
                 <ul className="space-y-3">
-                  {exp.responsibilities.map((resp, i) => (
+                  {exp.responsibilities && exp.responsibilities.map((resp, i) => (
                     <li
                       key={i}
                       className="flex gap-3 text-coffee-200 leading-relaxed text-[15px]"
