@@ -17,7 +17,7 @@ const experiences = [
   {
     company: "AEG Worldwide",
     position: "Associate Software Engineer",
-    period: "Jan. 2026 - Present"
+    period: "Feb. 2026 - Present"
   },
   {
     company: "AEG Worldwide",
