@@ -17,7 +17,7 @@ const projects: Project[] = [
   {
     title: "Capstone Project",
     name: "TraceRCA-OTel",
-    description: "A deployable implementation of the TraceRCA root cause analysis algorithm integrated with OpenTelemetry.",
+    description: "A deployable implementation of the TraceRCA root cause analysis algorithm as an observability backend integrated with OpenTelemetry.",
     tech: ["Python", "Go", "Kubernetes", "OpenTelemetry"],
     github: "https://github.com/Jared-Velasquez/TraceRCA-OTel"
   },
