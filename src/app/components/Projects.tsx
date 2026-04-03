@@ -15,6 +15,13 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Capstone Project",
+    name: "TraceRCA-OTel",
+    description: "A deployable implementation of the TraceRCA root cause analysis algorithm integrated with OpenTelemetry.",
+    tech: ["Python", "Go", "Kubernetes", "OpenTelemetry"],
+    github: "https://github.com/Jared-Velasquez/TraceRCA-OTel"
+  },
+  {
     title: "Class Project",
     name: "Pronghorn-Incremental",
     description: "An extension of the Pronghorn serverless checkpoint orchestration system with CRIU-based incremental delta snapshots. Reduced average maximum storage and network bandwidth by 10.1% and average latency by 12.3% on key workloads.",
